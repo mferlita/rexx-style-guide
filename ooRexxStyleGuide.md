@@ -2,9 +2,11 @@
 Rexx doesn't really have an official style guide. While learning ooRexx, I 
 thought I should figure something out. While Rexx emphasizes a "do it your own 
 way" approach, this might be detrimental in the open-source scene and larger 
-code bases. I've reviewed the official ooRexx documentation, other style guides,
-and styling recommendations from various RexxLA talks and have come up with the 
-following. This is a work in progress.
+code bases where communicating with your fellow programmers is just as important
+as talking to the computer. I've reviewed the official ooRexx documentation, 
+other style guides, and styling recommendations from various RexxLA talks and 
+have come up with the following. Please note that at this point, this is a work 
+in progress.
 
 | Element                 | Format                          | Examples                 |
 |-------------------------|---------------------------------|--------------------------|
