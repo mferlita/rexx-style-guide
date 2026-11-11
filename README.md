@@ -9,29 +9,14 @@ as talking to the computer. I've reviewed the official Rexx documentation,
 other style guides, and styling recommendations from various RexxLA talks and
 have come up with the following. 
 
+### Write code that is clear, not clever.
+
 Please note that at this point, this is a work
 in progress.
 
 ## General
 
-
-## Classic Rexx
-
-
-## ooRexx
-
-
-## NetRexx
-
-
-## CREXX
-
-
-## Portability Across Variants
-
-
-### Case
-
+### Naming
 | Element                 | Format                          | Examples                 |
 |-------------------------|---------------------------------|--------------------------|
 | Keyword Instructions    | lowercase                       | parse<br/>say            |
@@ -41,69 +26,30 @@ in progress.
 | Variables               | camelCase                       | myChapter                | 
 | Classes                 | PascalCase                      | .Array<br/>.DateTime     |
 | Boolean and Nil         | lowercase                       | .nil<br/>.true           | 
+#### Different cases are used for identifiers. See table above.
+#### Use meaningful names for variables, routines, classes, and methods.
+#### Avoid single character names.
+#### Do not mix cases in a project or file. Be consistent.
 
 
-### Write code that is clear, not clever.
+### Layout and Whitespace
+#### Prefer two spaces for indentation.
+#### Prefer 80 character line length.
+#### Leave whitespace around operators (a = 1 + 1). This improves readability greatly.
+#### Avoid unnecessary abbreviation.
+#### Align related code.
+#### One statement per line.
+#### Separate logical sections with one blank line.
 
+### Comments
+#### Comment generously and explain your intent.
+#### Use clear program headers
 
-### Different cases are used for identifiers. See table above.
-
-
-### Use meaningful names for variables, routines, classes, and methods.
-
-
-### Avoid single character names.
-
-
-### Prefer two spaces for indentation.
-
-
-### Prefer 80 character line length.
-
-
-### One statement per line.
-
-
-### Comment generously and explain your intent.
-
-
-### Leave whitespace around operators (a = 1 + 1). This improves readability greatly.
-
-
-### Keep routines and methods small.
-
-
-### If you call code only once, don't make it a routine or a method.
-
-
-### Align related code.
-
-
-### Separate logical sections with one blank line.
-
-
-### Prefer object methods over legacy functions.
-
-
-### Avoid unnecessary abbreviation.
-
-
-### Use clear program headers
-
-
-### In the Directives section, use comment lines to separate ::routine and ::class blocks.
-
-
-### Include Error Handling
-
-
-### Put directives at the end of a file
-
-
-### USE ARG vs. PARSE ARG
-
-
-### The ADDRESS Statement
+### Structure
+#### Keep routines and methods small.
+#### If you call code only once, don't make it a routine or a method.
+#### In the Directives section, use comment lines to separate ::routine and ::class blocks.
+#### Put directives at the end of a file
 
 ### Control Flow
 #### Avoid deeply nested if statements and keep them simple.
@@ -112,11 +58,33 @@ in progress.
 
 ### DO Loops
 
+
 ### String Concatenation
 
-### Rules for Portability
 
-### Do not mix cases in a project, let alone a single file. Be consistent.
+### Error Handling
+
+
+### ADDRESS
+
+
+### USE ARG vs. PARSE ARG
+
+
+## Rules Specific to Classic Rexx
+
+
+## Rules Specific to ooRexx
+### Prefer object methods over legacy functions.
+
+## Rules Specific to NetRexx
+
+
+## Rules Specific to CREXX
+
+
+## Portability Across Variants
+### Rules for Portability
 
 
 ## Tools
@@ -130,19 +98,7 @@ https://www.rexxla.org/presentations/2019/REXX%20Language%20Coding%20Techniques%
 https://www.rexxla.org/presentations/2000/RexxHints.pdf
 https://erroneousbee.github.io/Computers/RexxStyleGuide.html
 https://www.rexxla.org/presentations/2024/Rosetta%20Pearls.pdf
-https://www.rexxla.org/presentations/2026/Barcelona.pdf
 https://www.oorexx.org/docs/index.rsp
 https://www.netrexx.org/documentation.nsp
 https://crexx.org/docs/crexx_language_reference.pdf
 https://github.com/RexxLA/rexxetta
-
-| ooRexx Element          | Format                          | Example                  |
-|-------------------------|---------------------------------|--------------------------|
-| Environment Directories | lowercase                       | .environment<br/>.local  |
-| Runtime Values          | lowercase                       | .line<br/>.rs            |
-| Runtime Collections     | lowercase                       | .methods<br/>.resources  |
-| Standard Stream         | lowercase                       | .stdin<br/>.stdout       |
-| Monitor Stream          | lowercase                       | .input<br/>.output       |
-| Runtime Info            | PascalCase                      | .RexxInfo                |
-| Runtime Context         | lowercase                       | .context                 |
-
