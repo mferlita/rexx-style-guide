@@ -23,12 +23,39 @@ collaboration among developers.
 #### Different cases are used for identifiers. See table above.
 #### Use meaningful names for variables, routines, classes, and methods.
 #### Avoid single character names.
-#### Do not mix cases in a project or file. Be consistent.
+#### Do not mix cases for keywords, classes, methods, and routines in a project or file. Be consistent.
 
 ### Layout and Whitespace
 #### Prefer two spaces for indentation.
+
+
 #### Prefer 80 character line length.
-#### Leave whitespace around operators (a = 1 + 1). This improves readability greatly.
+
+#### No trailing whitespace
+
+#### Leave whitespace around operators
+Use spaces around operators, after commas, colons, and semicolons.
+```
+/* Good */
+say 98 + (59872 % (13 * 8)) * 52
+x = 1, 2, 3
+do i to N by 1; end
+
+/* Bad */
+say 98+(59872%(13*8))*52
+x=1,2,3
+do i to N by 1;end
+```
+Exceptions:  
+Exponentiation and negative integers  
+```
+/* Good */
+say -52 * 5**2
+
+/* Bad */
+say - 52 * 5 ** 2
+```
+
 #### Avoid unnecessary abbreviation.
 #### Align related code.
 #### One statement per line.
