@@ -2,8 +2,8 @@
 Style guide for Rexx, ooRexx, NetRexx, and cRexx with input from the RexxLA community.
 
 Rexx has always emphasized human-readable code. Communicating with your fellow programmers
-is just as important as communicating with the computer. Code is more often read than it is
-written, after all. This style guide emphasizes readability to facilitate better 
+is just as important as communicating with the computer. After all, code is more often read than it is
+written. This style guide emphasizes readability for Rexx code to facilitate better 
 collaboration among developers.
 
 > "Enhancing readability enhances our ability to solve problems" — V. Anton Spraul, *Think Like a Programmer*
