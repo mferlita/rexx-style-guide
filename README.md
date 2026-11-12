@@ -1,18 +1,12 @@
 # rexx-style-guide
 Style guide for Rexx, ooRexx, NetRexx, and cRexx with input from the RexxLA community.
 
-Rexx doesn't really have an official style guide. While learning ooRexx, I
-thought I should figure something out. While Rexx emphasizes a "do it your own
-way" approach, this might be detrimental in the open-source scene and larger
-code bases where communicating with your fellow programmers is just as important
-as talking to the computer. I've reviewed the official Rexx documentation,
-other style guides, and styling recommendations from various RexxLA talks and
-have come up with the following. 
+Rexx has always emphasized human-readable code. Communicating with your fellow programmers
+is just as important as communicating with the computer. Code is more often read than it is
+written, after all. This style guide emphasizes readability to facilitate better 
+collaboration among developers.
 
-### Write code that is clear, not clever.
-
-Please note that at this point, this is a work
-in progress.
+> "Enhancing readability enhances our ability to solve problems" — V. Anton Spraul, *Think Like a Programmer*
 
 ## General
 
@@ -30,7 +24,6 @@ in progress.
 #### Use meaningful names for variables, routines, classes, and methods.
 #### Avoid single character names.
 #### Do not mix cases in a project or file. Be consistent.
-
 
 ### Layout and Whitespace
 #### Prefer two spaces for indentation.
@@ -88,17 +81,18 @@ in progress.
 
 
 ## Tools
-
+* [rexx-lint](https://github.com/shmuelmetz/rexx-lint)
 
 ## Sources of Inspiration
-https://rubystyle.guide/
-https://google.github.io/styleguide/javaguide.html
-https://peps.python.org/pep-0008/
-https://www.rexxla.org/presentations/2019/REXX%20Language%20Coding%20Techniques%20Rexx%20Symposium%2020191001.pdf
-https://www.rexxla.org/presentations/2000/RexxHints.pdf
-https://erroneousbee.github.io/Computers/RexxStyleGuide.html
-https://www.rexxla.org/presentations/2024/Rosetta%20Pearls.pdf
-https://www.oorexx.org/docs/index.rsp
-https://www.netrexx.org/documentation.nsp
-https://crexx.org/docs/crexx_language_reference.pdf
-https://github.com/RexxLA/rexxetta
+* [The Ruby Style Guide](https://rubystyle.guide/)
+* [Google's Java Style Guide](https://google.github.io/styleguide/javaguide.html)
+* [PEP 8 — Style Guide for Python Code](https://peps.python.org/pep-0008/)
+* [Safe REXX](https://github.com/shmuelmetz/Safe-REXX/blob/7c8f3ee77756595dcfc26932caacb5eaba9ee08b/Safe-REXX-Desktop-Enterprise.md)
+* [Rexx Language Coding Techniques](https://www.rexxla.org/presentations/2019/REXX%20Language%20Coding%20Techniques%20Rexx%20Symposium%2020191001.pdf)
+* [Good Rexx Coding Practices](https://www.rexxla.org/presentations/2000/RexxHints.pdf)
+* [Style Guide for Rexx](https://erroneousbee.github.io/Computers/RexxStyleGuide.html)
+* [Rosetta Pearls](https://www.rexxla.org/presentations/2024/Rosetta%20Pearls.pdf)
+* [Official ooRexx Documentation](https://www.oorexx.org/docs/index.rsp)
+* [Official NetRexx Documentation](https://www.netrexx.org/documentation.nsp)
+* [Official CREXX Documentation](https://crexx.org/#docs)
+* [Rexxetta](https://github.com/RexxLA/rexxetta)
