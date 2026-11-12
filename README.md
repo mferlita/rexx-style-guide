@@ -47,13 +47,15 @@ x=1,2,3
 do i to N by 1;end
 ```
 Exceptions:  
-Exponentiation and negative integers  
+Exponentiation, negative integers, and method send operator (twiddle)  
 ```
 /* Good */
 say -52 * 5**2
+say "Hello!"~reverse
 
 /* Bad */
 say - 52 * 5 ** 2
+say "Hello!" ~ reverse
 ```
 
 #### Avoid unnecessary abbreviation.
