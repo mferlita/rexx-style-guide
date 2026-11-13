@@ -11,61 +11,169 @@ collaboration among developers.
 ## General
 
 ### Naming
-| Element                 | Format                          | Examples                 |
-|-------------------------|---------------------------------|--------------------------|
-| Keyword Instructions    | lowercase                       | parse<br/>say            |
-| Built-in Functions      | UPPERCASE                       | RANDOM()<br/>CHAROUT()   |
-| Directives              | lowercase                       | ::class<br/>::include    |
-| Methods and Routines    | camelCase                       | append<br/>appendAll     | 
-| Variables               | camelCase                       | myChapter                | 
-| Classes                 | PascalCase                      | .Array<br/>.DateTime     |
-| Boolean and Nil         | lowercase                       | .nil<br/>.true           | 
-#### Different cases are used for identifiers. See table above.
-#### Use meaningful names for variables, routines, classes, and methods.
-#### Avoid single character names.
-#### Do not mix cases for keywords, classes, methods, and routines in a project or file. Be consistent.
+| Element                 | Format                          | Examples               |
+|-------------------------|---------------------------------|------------------------|
+| Keyword Instructions    | lowercase                       | parse<br/>say          |
+| Built-in Functions      | UPPERCASE                       | RANDOM()<br/>CHAROUT() |
+| Directives              | lowercase                       | ::class<br/>::include  |
+| Methods and Routines    | camelCase                       | append<br/>appendAll   | 
+| Variables               | camelCase                       | myChapter              | 
+| Classes                 | PascalCase                      | .DateTime<br/>RomanNum |
+| Boolean and Nil         | lowercase                       | .nil<br/>.true         | 
+* #### Different cases are used for identifiers. See table above.
+
+* #### Use English for identifiers
+  ```
+  /* Good - Identifier is in English */
+  salary = 1000
+  
+  /* Bad - Indentifier is in Greek */
+  μισθός = 1000
+  
+  /* Bad - Identifier is in Greek but spelled with Latin letters */
+  misthos = 1000
+  ```
+
+* #### Use meaningful names for variables, routines, classes, and methods.
+  ```
+  /* Good - descriptive, relevant */
+  price = 1 + 2
+  total = price * 3
+  ::method calculateTotal
+  
+  /* Bad - generic, unclear */
+  values = 1 + 2
+  computed = values * 3
+  ::method calc
+  ```
+
+* #### Avoid single character names.
+  ```
+  /* Good */
+  do count = 1 to max
+  
+  /* Bad */
+  do c = 1 to m
+  ```
+
+* #### Avoid unnecessary abbreviation
+  ```
+  /* Good */
+  lineCount = 2
+  
+  /* Bad */
+  lineCnt = 2
+  ```
 
 ### Layout and Whitespace
-#### Prefer two spaces for indentation.
+* #### Prefer two spaces for indentation.
+  ```
+  /* Good - 2 spaces */ 
+  do forever
+    say "SPAM"
+  end
+  
+  /* Bad - no indentation */
+  do forever
+  say "SPAM"
+  end
+  
+  /* Bad - 4 spaces */
+  do forever
+      say "SPAM"
+  end
+  ```
 
+* #### Prefer 80 character line length.
 
-#### Prefer 80 character line length.
+* #### No trailing whitespace
 
-#### No trailing whitespace
+* #### Leave whitespace around operators
+  Use spaces around operators, after commas, colons, and semicolons.
+  ```
+  /* Good */
+  say 98 + (59872 % (13 * 8)) * 52
+  x = 1, 2, 3
+  min = 2; max = 4
+  
+  /* Bad */
+  say 98+(59872%(13*8))*52
+  x=1,2,3
+  min=2;max=4
+  ```
+  
+  *Exceptions:* Exponentiation, negative integers, and method send operator (twiddle)  
+  ```
+  /* Good */
+  say -52 * 5**2
+  say "!elloH"~reverse
+  
+  /* Bad */
+  say - 52 * 5 ** 2
+  say "!elloH" ~ reverse
+  ```
 
-#### Leave whitespace around operators
-Use spaces around operators, after commas, colons, and semicolons.
-```
-/* Good */
-say 98 + (59872 % (13 * 8)) * 52
-x = 1, 2, 3
-do i to N by 1; end
-
-/* Bad */
-say 98+(59872%(13*8))*52
-x=1,2,3
-do i to N by 1;end
-```
-Exceptions:  
-Exponentiation, negative integers, and method send operator (twiddle)  
-```
-/* Good */
-say -52 * 5**2
-say "Hello!"~reverse
-
-/* Bad */
-say - 52 * 5 ** 2
-say "Hello!" ~ reverse
-```
-
-#### Avoid unnecessary abbreviation.
-#### Align related code.
-#### One statement per line.
-#### Separate logical sections with one blank line.
+* #### Align the elements of arrays spanning multiple lines
+  ```
+  /* Good */
+  someArray = "Apples", -
+              "Oranges", -
+              "Persimmons"
+  
+  /* Bad */
+  someArray = "Apples", -
+  "Oranges", -
+  "Persimmons"
+  
+  ```
+  
+* #### One statement per line.
+  One-liners may be written in the case of "if/then" statements that do not 
+  contain "else" or "do/end" and the full line is no more than 40 characters 
+  long.
+  ```
+  /* Good */
+  say "Hi"
+  say "Bye"
+  
+  if someVar > 0 then say "postiive"
+  
+  if lineCount > 100 then
+    say "Warning: large file (" || lineCount " || "lines)"
+  
+  /* Bad */
+  say "Hi"; say "Bye"
+  
+  if someVar > 0 then; say "positive"
+  
+  if lineCount > 100 then say "Warning: large file (" || lineCount " || "lines)"
+  ```
+  
+* #### Separate logical sections with one blank line.
+  ```
+  /* Good */
+  price = 1 + 2
+  total = price * 3
+  
+  taxRate = 0.08
+  tax = total * taxRate
+  
+  say "Total:" total
+  say "Tax:" tax
+  
+  /* Bad */
+  price = 1 + 2
+  total = price * 3
+  taxRate = 0.08
+  tax = total * taxRate
+  say "Total:" total
+  say "Tax:" tax
+  ```
 
 ### Comments
 #### Comment generously and explain your intent.
 #### Use clear program headers
+#### Comment styling
 
 ### Structure
 #### Keep routines and methods small.
