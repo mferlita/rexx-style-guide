@@ -25,63 +25,63 @@ collaboration among developers.
 * #### Use English for identifiers
   ```
   /* Good - Identifier is in English */
-  salary = 1000
+    salary = 1000
   
   /* Bad - Indentifier is in Greek */
-  μισθός = 1000
+    μισθός = 1000
   
   /* Bad - Identifier is in Greek but spelled with Latin letters */
-  misthos = 1000
+    misthos = 1000
   ```
 
 * #### Use meaningful names for variables, routines, classes, and methods.
   ```
   /* Good - descriptive, relevant */
-  price = 1 + 2
-  total = price * 3
-  ::method calculateTotal
+    price = 1 + 2
+    total = price * 3
+    ::method calculateTotal
   
   /* Bad - generic, unclear */
-  values = 1 + 2
-  computed = values * 3
-  ::method calc
+    values = 1 + 2
+    computed = values * 3
+    ::method calc
   ```
 
 * #### Avoid single character names.
   ```
   /* Good */
-  do count = 1 to max
+    do count = 1 to max
   
   /* Bad */
-  do c = 1 to m
+    do c = 1 to m
   ```
 
 * #### Avoid unnecessary abbreviation
   ```
   /* Good */
-  lineCount = 2
+    lineCount = 2
   
   /* Bad */
-  lineCnt = 2
+    lineCnt = 2
   ```
 
 ### Layout and Whitespace
 * #### Prefer two spaces for indentation.
   ```
   /* Good - 2 spaces */ 
-  do forever
-    say "SPAM"
-  end
+    do forever
+      say "SPAM"
+    end
   
   /* Bad - no indentation */
-  do forever
-  say "SPAM"
-  end
+    do forever
+    say "SPAM"
+    end
   
   /* Bad - 4 spaces */
-  do forever
-      say "SPAM"
-  end
+    do forever
+        say "SPAM"
+    end
   ```
 
 * #### Prefer 80 character line length.
@@ -92,38 +92,38 @@ collaboration among developers.
   Use spaces around operators, after commas, colons, and semicolons.
   ```
   /* Good */
-  say 98 + (59872 % (13 * 8)) * 52
-  x = 1, 2, 3
-  min = 2; max = 4
+    say 98 + (59872 % (13 * 8)) * 52
+    x = 1, 2, 3
+    min = 2; max = 4
   
   /* Bad */
-  say 98+(59872%(13*8))*52
-  x=1,2,3
-  min=2;max=4
+    say 98+(59872%(13*8))*52
+    x=1,2,3
+    min=2;max=4
   ```
   
   *Exceptions:* Exponentiation, negative integers, and method send operator (twiddle)  
   ```
   /* Good */
-  say -52 * 5**2
-  say "!elloH"~reverse
+    say -52 * 5**2
+    say "!elloH"~reverse
   
   /* Bad */
-  say - 52 * 5 ** 2
-  say "!elloH" ~ reverse
+    say - 52 * 5 ** 2
+    say "!elloH" ~ reverse
   ```
 
 * #### Align the elements of arrays spanning multiple lines
   ```
   /* Good */
-  someArray = "Apples", -
-              "Oranges", -
-              "Persimmons"
-  
+    someArray = "Apples", -
+                "Oranges", -
+                "Persimmons"
+    
   /* Bad */
-  someArray = "Apples", -
-  "Oranges", -
-  "Persimmons"
+    someArray = "Apples", -
+    "Oranges", -
+    "Persimmons"
   
   ```
   
@@ -133,61 +133,115 @@ collaboration among developers.
   long.
   ```
   /* Good */
-  say "Hi"
-  say "Bye"
-  
-  if someVar > 0 then say "postiive"
-  
-  if lineCount > 100 then
-    say "Warning: large file (" || lineCount " || "lines)"
-  
+    say "Hi"
+    say "Bye"
+    
+    if someVar > 0 then say "postiive"
+    
+    if lineCount > 100 then
+      say "Warning: large file (" || lineCount " || "lines)"
+    
   /* Bad */
-  say "Hi"; say "Bye"
-  
-  if someVar > 0 then; say "positive"
-  
-  if lineCount > 100 then say "Warning: large file (" || lineCount " || "lines)"
+    say "Hi"; say "Bye"
+    
+    if someVar > 0 then; say "positive"
+    
+    if lineCount > 100 then say "Warning: large file (" || lineCount " || "lines)"
   ```
   
 * #### Separate logical sections with one blank line.
   ```
   /* Good */
-  price = 1 + 2
-  total = price * 3
-  
-  taxRate = 0.08
-  tax = total * taxRate
-  
-  say "Total:" total
-  say "Tax:" tax
+    price = 1 + 2
+    total = price * 3
+    
+    taxRate = 0.08
+    tax = total * taxRate
+    
+    say "Total:" total
+    say "Tax:" tax
   
   /* Bad */
-  price = 1 + 2
-  total = price * 3
-  taxRate = 0.08
-  tax = total * taxRate
-  say "Total:" total
-  say "Tax:" tax
+    price = 1 + 2
+    total = price * 3
+    taxRate = 0.08
+    tax = total * taxRate
+    say "Total:" total
+    say "Tax:" tax
   ```
 
 ### Comments
-#### Comment generously and explain your intent.
-#### Use clear program headers
-#### Comment styling
+* #### Comment styling
+  ```
+  /* Good - Inline Comments */
+  
+    /* an inline comment (portable) */
+    -- an inline comment (ooRexx/NetRexx/CREXX only)
+  
+  /* Good - Block Comments */
+  
+    /* 
+    * This is a block style comment
+    * for describing things in detail 
+    * and grabbing attention
+    */
+  
+  /* Bad - Block Comments */
+  
+    /************************************************/
+    /* To the interpreter, these lines are all      */
+    /* seperate comments and could consume extra    */
+    /* cycles, affecting performance. They eat      */
+    /* up file space unnecessarily which could also */
+    /* affect performance. Lastly, they are harder  */
+    /* to write and thus harder to maintain.        */                                        */
+    /************************************************/
+  
+    /***************************************
+    * This is also bad. While the block is *
+    * considered one comment now, it is    *
+    * still just as hard to maintain       *
+    * because of all the extra symbols.    *
+    ***************************************/
+  
+  ```
+
+* #### Use clear program headers
+
+* #### Comment generously 
+
+* #### Explain your intent.
 
 ### Structure
-#### Keep routines and methods small.
-#### If you call code only once, don't make it a routine or a method.
-#### In the Directives section, use comment lines to separate ::routine and ::class blocks.
-#### Put directives at the end of a file
+* #### Routines and methods should be no longer than ten lines of code. Empty lines do not count.
+
+* #### If you call code only once, don't make it a routine or a method.
+
+* #### In the Directives section, use comment lines to separate ::routine and ::class blocks.
+
+* #### Put directives after the main body of code
 
 ### Control Flow
-#### Avoid deeply nested if statements and keep them simple.
-#### If / Then / Else
-#### Select / When / Otherwise
+* #### Avoid deeply nested if statements and keep them simple.
 
-### DO Loops
+* #### If / Then / Else
 
+* #### Select / When / Otherwise
+
+### DO statements
+* #### Keep "do" on the same line as its conditional statement
+  ```
+  /* Good */
+    do while num > 1
+      ...some code
+    end
+    
+  /* Bad */
+    do
+      while num > 1
+      ...some code
+    end
+  ```
 
 ### String Concatenation
 
@@ -205,7 +259,7 @@ collaboration among developers.
 
 
 ## Rules Specific to ooRexx
-### Prefer object methods over legacy functions.
+* #### Prefer object methods over legacy functions
 
 ## Rules Specific to NetRexx
 
@@ -213,8 +267,7 @@ collaboration among developers.
 ## Rules Specific to CREXX
 
 
-## Portability Across Variants
-### Rules for Portability
+## Rules for Portability
 
 
 ## Tools
