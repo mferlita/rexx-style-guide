@@ -1,25 +1,28 @@
 # rexx-style-guide
-Style guide for Rexx, ooRexx, NetRexx, and cRexx with input from the RexxLA community.
+Style guide for Rexx, ooRexx, NetRexx, and cRexx with input from the RexxLA 
+community.
 
-Rexx has always emphasized human-readable code. Communicating with your fellow programmers
-is just as important as communicating with the computer. After all, code is more often read than it is
-written. This style guide emphasizes readability for Rexx code to facilitate better 
-collaboration among developers.
+Rexx has always emphasized human-readable code. Communicating with your 
+fellow programmers is just as important as communicating with the computer. 
+After all, code is more often read than it is written. This style guide 
+emphasizes readability for Rexx code to facilitate better collaboration 
+among developers.
 
-> "Enhancing readability enhances our ability to solve problems" — V. Anton Spraul, *Think Like a Programmer*
+> "Enhancing readability enhances our ability to solve problems" — V. Anton 
+> Spraul, *Think Like a Programmer*
 
 ## General
 
 ### Naming
-| Element                 | Format                          | Examples               |
-|-------------------------|---------------------------------|------------------------|
-| Keyword Instructions    | lowercase                       | parse<br/>say          |
-| Built-in Functions      | UPPERCASE                       | RANDOM()<br/>CHAROUT() |
-| Directives              | lowercase                       | ::class<br/>::include  |
-| Methods and Routines    | camelCase                       | append<br/>appendAll   | 
-| Variables               | camelCase                       | myChapter              | 
-| Classes                 | PascalCase                      | .DateTime<br/>RomanNum |
-| Boolean and Nil         | lowercase                       | .nil<br/>.true         | 
+| Element                 | Format     | Examples               |
+|-------------------------|------------|------------------------|
+| Keyword Instructions    | lowercase  | parse<br/>say          |
+| Built-in Functions      | UPPERCASE  | RANDOM()<br/>CHAROUT() |
+| Directives              | lowercase  | ::class<br/>::include  |
+| Methods and Routines    | camelCase  | append<br/>appendAll   | 
+| Variables               | camelCase  | myChapter              | 
+| Classes                 | PascalCase | .DateTime<br/>RomanNum |
+| Boolean and Nil         | lowercase  | .nil<br/>.true         | 
 * #### Use the case convention above in a file and do not mix cases.
 
 * #### Use English for identifiers
@@ -102,7 +105,8 @@ collaboration among developers.
     min=2;max=4
   ```
   
-  *Exceptions:* Exponentiation, negative integers, and method send operator (twiddle)  
+  *Exceptions:* Exponentiation, negative integers, and method send operator 
+  (twiddle)  
   ```rexx
   /* Good */
     say -52 * 5**2
@@ -137,7 +141,7 @@ collaboration among developers.
       say "positive"
   
     if lineCount > 1000 then
-      say "Warning: large file (" || lineCount " || "lines)"
+      say "Warning: large file"
 
     
   /* Bad */
@@ -145,7 +149,7 @@ collaboration among developers.
     
     if someVar > 0 then say "positive"
   
-    if lineCount > 1000 then say "Warning: large file (" || lineCount " || "lines)"
+    if lineCount > 1000 then say "Warning: large file"
   ```
   
 * #### Separate logical sections with one blank line.
@@ -193,7 +197,7 @@ collaboration among developers.
     /* cycles, affecting performance. They eat      */
     /* up file space unnecessarily which could also */
     /* affect performance. Lastly, they are harder  */
-    /* to write and thus harder to maintain.        */                                        
+    /* to write and thus harder to maintain.        */
     /************************************************/
   
     /***************************************
@@ -210,20 +214,25 @@ collaboration among developers.
 * #### Comment generously to explain your intent
 
 ### Structure
-* #### Routines and methods should be short. If it exceeds ten lines, consider if it's doing more than one thing.
+* #### Keep routines and methods short. 
+  If it exceeds ten lines of code (empty lines excluded), ask "is this doing 
+  more than one thing?"
 
 * #### If you call code only once, don't make it a routine or a method.
 
-* #### In the Directives section, use comment lines to separate ::routine and ::class blocks.
+* #### Use comment lines to separate ::routine and ::class blocks.
 
 * #### Put directives after the main body of code
 
 ### Control Flow
 * #### Avoid deeply nested if statements and keep them simple.
+<!-- TODO -->
 
 * #### If / Then / Else
+<!-- TODO -->
 
 * #### Select / When / Otherwise
+<!-- TODO -->
 
 ### DO statements
 * #### Keep "do" on the same line as its conditional statement
