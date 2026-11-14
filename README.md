@@ -20,14 +20,14 @@ collaboration among developers.
 | Variables               | camelCase                       | myChapter              | 
 | Classes                 | PascalCase                      | .DateTime<br/>RomanNum |
 | Boolean and Nil         | lowercase                       | .nil<br/>.true         | 
-* #### Different cases are used for identifiers. See table above.
+* #### Use the case convention above in a file and do not mix cases.
 
 * #### Use English for identifiers
-  ```
+  ```rexx
   /* Good - Identifier is in English */
     salary = 1000
   
-  /* Bad - Indentifier is in Greek */
+  /* Bad - Identifier is in Greek */
     μισθός = 1000
   
   /* Bad - Identifier is in Greek but spelled with Latin letters */
@@ -35,7 +35,7 @@ collaboration among developers.
   ```
 
 * #### Use meaningful names for variables, routines, classes, and methods.
-  ```
+  ```rexx
   /* Good - descriptive, relevant */
     price = 1 + 2
     total = price * 3
@@ -48,7 +48,7 @@ collaboration among developers.
   ```
 
 * #### Avoid single character names.
-  ```
+  ```rexx
   /* Good */
     do count = 1 to max
   
@@ -57,7 +57,7 @@ collaboration among developers.
   ```
 
 * #### Avoid unnecessary abbreviation
-  ```
+  ```rexx
   /* Good */
     lineCount = 2
   
@@ -67,7 +67,7 @@ collaboration among developers.
 
 ### Layout and Whitespace
 * #### Prefer two spaces for indentation.
-  ```
+  ```rexx
   /* Good - 2 spaces */ 
     do forever
       say "SPAM"
@@ -90,7 +90,7 @@ collaboration among developers.
 
 * #### Leave whitespace around operators
   Use spaces around operators, after commas, colons, and semicolons.
-  ```
+  ```rexx
   /* Good */
     say 98 + (59872 % (13 * 8)) * 52
     x = 1, 2, 3
@@ -103,7 +103,7 @@ collaboration among developers.
   ```
   
   *Exceptions:* Exponentiation, negative integers, and method send operator (twiddle)  
-  ```
+  ```rexx
   /* Good */
     say -52 * 5**2
     say "!elloH"~reverse
@@ -114,7 +114,7 @@ collaboration among developers.
   ```
 
 * #### Align the elements of arrays spanning multiple lines
-  ```
+  ```rexx
   /* Good */
     someArray = "Apples", -
                 "Oranges", -
@@ -128,29 +128,28 @@ collaboration among developers.
   ```
   
 * #### One statement per line.
-  One-liners may be written in the case of "if/then" statements that do not 
-  contain "else" or "do/end" and the full line is no more than 40 characters 
-  long.
-  ```
+  ```rexx
   /* Good */
     say "Hi"
     say "Bye"
-    
-    if someVar > 0 then say "postiive"
-    
-    if lineCount > 100 then
+  
+    if someVar > 0 then 
+      say "positive"
+  
+    if lineCount > 1000 then
       say "Warning: large file (" || lineCount " || "lines)"
+
     
   /* Bad */
     say "Hi"; say "Bye"
     
-    if someVar > 0 then; say "positive"
-    
-    if lineCount > 100 then say "Warning: large file (" || lineCount " || "lines)"
+    if someVar > 0 then say "positive"
+  
+    if lineCount > 1000 then say "Warning: large file (" || lineCount " || "lines)"
   ```
   
 * #### Separate logical sections with one blank line.
-  ```
+  ```rexx
   /* Good */
     price = 1 + 2
     total = price * 3
@@ -158,8 +157,8 @@ collaboration among developers.
     taxRate = 0.08
     tax = total * taxRate
     
-    say "Total:" total
-    say "Tax:" tax
+    say "Total: " || total
+    say "Tax: " || tax
   
   /* Bad */
     price = 1 + 2
@@ -172,7 +171,7 @@ collaboration among developers.
 
 ### Comments
 * #### Comment styling
-  ```
+  ```rexx
   /* Good - Inline Comments */
   
     /* an inline comment (portable) */
@@ -190,11 +189,11 @@ collaboration among developers.
   
     /************************************************/
     /* To the interpreter, these lines are all      */
-    /* seperate comments and could consume extra    */
+    /* separate comments and could consume extra    */
     /* cycles, affecting performance. They eat      */
     /* up file space unnecessarily which could also */
     /* affect performance. Lastly, they are harder  */
-    /* to write and thus harder to maintain.        */                                        */
+    /* to write and thus harder to maintain.        */                                        
     /************************************************/
   
     /***************************************
@@ -208,12 +207,10 @@ collaboration among developers.
 
 * #### Use clear program headers
 
-* #### Comment generously 
-
-* #### Explain your intent.
+* #### Comment generously to explain your intent
 
 ### Structure
-* #### Routines and methods should be no longer than ten lines of code. Empty lines do not count.
+* #### Routines and methods should be short. If it exceeds ten lines, consider if it's doing more than one thing.
 
 * #### If you call code only once, don't make it a routine or a method.
 
@@ -230,7 +227,7 @@ collaboration among developers.
 
 ### DO statements
 * #### Keep "do" on the same line as its conditional statement
-  ```
+  ```rexx
   /* Good */
     do while num > 1
       ...some code
@@ -244,31 +241,45 @@ collaboration among developers.
   ```
 
 ### String Concatenation
-
+* #### Prefer explicit concatenation over implicit
+  ```rexx
+  /* Good */
+  name = stdin~lineIn()
+  say "My name is " || name || "."
+  
+  say 2 || "5"
+  say "I like " || "apple pie."
+  
+  /* Bad */
+  name = stdin~lineIn()
+  say "My name is" name"."
+  
+  say 2"5"
+  say "I like" "apple pie"
+  ```
 
 ### Error Handling
-
+<!-- TODO -->
 
 ### ADDRESS
-
-
-### USE ARG vs. PARSE ARG
-
+<!-- TODO -->
 
 ## Rules Specific to Classic Rexx
-
+<!-- TODO -->
 
 ## Rules Specific to ooRexx
 * #### Prefer object methods over legacy functions
+<!-- TODO -->
 
 ## Rules Specific to NetRexx
-
+<!-- TODO -->
 
 ## Rules Specific to CREXX
-
+<!-- TODO -->
 
 ## Rules for Portability
-
+### USE ARG vs. PARSE ARG
+<!-- TODO -->
 
 ## Tools
 * [rexx-lint](https://github.com/shmuelmetz/rexx-lint)
