@@ -26,7 +26,7 @@ among developers.
 * #### Use the case convention above in a file and do not mix cases.
 
 * #### Use English for identifiers
-  ```rexx
+  ```
   /* Good - Identifier is in English */
     salary = 1000
   
@@ -38,7 +38,7 @@ among developers.
   ```
 
 * #### Use meaningful names for variables, routines, classes, and methods.
-  ```rexx
+  ```
   /* Good - descriptive, relevant */
     price = 1 + 2
     total = price * 3
@@ -51,7 +51,7 @@ among developers.
   ```
 
 * #### Avoid single character names.
-  ```rexx
+  ```
   /* Good */
     do count = 1 to max
   
@@ -60,7 +60,7 @@ among developers.
   ```
 
 * #### Avoid unnecessary abbreviation
-  ```rexx
+  ```
   /* Good */
     lineCount = 2
   
@@ -70,7 +70,7 @@ among developers.
 
 ### Layout and Whitespace
 * #### Prefer two spaces for indentation.
-  ```rexx
+  ```
   /* Good - 2 spaces */ 
     do forever
       say "SPAM"
@@ -93,7 +93,7 @@ among developers.
 
 * #### Leave whitespace around operators
   Use spaces around operators, after commas, colons, and semicolons.
-  ```rexx
+  ```
   /* Good */
     say 98 + (59872 % (13 * 8)) * 52
     x = 1, 2, 3
@@ -107,7 +107,7 @@ among developers.
   
   *Exceptions:* Exponentiation, negative integers, and method send operator 
   (twiddle)  
-  ```rexx
+  ```
   /* Good */
     say -52 * 5**2
     say "!elloH"~reverse
@@ -118,7 +118,7 @@ among developers.
   ```
 
 * #### Align the elements of arrays spanning multiple lines
-  ```rexx
+  ```
   /* Good */
     someArray = "Apples", -
                 "Oranges", -
@@ -132,7 +132,7 @@ among developers.
   ```
   
 * #### One statement per line.
-  ```rexx
+  ```
   /* Good */
     say "Hi"
     say "Bye"
@@ -153,7 +153,7 @@ among developers.
   ```
   
 * #### Separate logical sections with one blank line.
-  ```rexx
+  ```
   /* Good */
     price = 1 + 2
     total = price * 3
@@ -175,7 +175,7 @@ among developers.
 
 ### Comments
 * #### Comment styling
-  ```rexx
+  ```
   /* Good - Inline Comments */
   
     /* an inline comment (portable) */
@@ -236,7 +236,7 @@ among developers.
 
 ### DO statements
 * #### Keep "do" on the same line as its conditional statement
-  ```rexx
+  ```
   /* Good */
     do while num > 1
       ...some code
@@ -251,7 +251,7 @@ among developers.
 
 ### String Concatenation
 * #### Prefer explicit concatenation over implicit
-  ```rexx
+  ```
   /* Good */
   name = stdin~lineIn()
   say "My name is " || name || "."
