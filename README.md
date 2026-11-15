@@ -1,5 +1,7 @@
 # rexx-style-guide
-Style guide for Rexx, ooRexx, NetRexx, and cRexx with input from the RexxLA 
+Style guide for Rexx, ooRexx, NetRexx, and CREXX
+
+This style guide is maintained by Matt Ferlita with input from the RexxLA 
 community.
 
 Rexx has always emphasized human-readable code. Communicating with your 
@@ -14,15 +16,15 @@ among developers.
 ## General
 
 ### Naming
-| Element                 | Format     | Examples               |
-|-------------------------|------------|------------------------|
-| Keyword Instructions    | lowercase  | parse<br/>say          |
-| Built-in Functions      | UPPERCASE  | RANDOM()<br/>CHAROUT() |
-| Directives              | lowercase  | ::class<br/>::include  |
-| Methods and Routines    | camelCase  | append<br/>appendAll   | 
-| Variables               | camelCase  | myChapter              | 
-| Classes                 | PascalCase | .DateTime<br/>RomanNum |
-| Boolean and Nil         | lowercase  | .nil<br/>.true         | 
+| Element                 | Format     |
+|-------------------------|------------|
+| Keyword Instructions    | lowercase  |
+| Built-in Functions      | UPPERCASE  |
+| Directives              | lowercase  |
+| Methods and Routines    | camelCase  |
+| Variables               | camelCase  |
+| Classes                 | PascalCase |
+| Boolean                 | lowercase  |
 * #### Use the case convention above in a file and do not mix cases.
 
 * #### Use English for identifiers
@@ -67,6 +69,8 @@ among developers.
   /* Bad */
     lineCnt = 2
   ```
+  
+* #### Avoid keyword names as variables
 
 ### Layout and Whitespace
 * #### Prefer two spaces for indentation.
@@ -120,14 +124,14 @@ among developers.
 * #### Align the elements of arrays spanning multiple lines
   ```
   /* Good */
-    someArray = "Apples", -
-                "Oranges", -
-                "Persimmons"
+    someArray = "Apples", "Oranges", "Persimmons", -
+                "Lemons", "Limes", "Bergamot", -
+                "Pears", "Cherries", "Plums"
     
   /* Bad */
-    someArray = "Apples", -
-    "Oranges", -
-    "Persimmons"
+    someArray = "Apples", "Oranges", "Persimmons", -
+    "Lemons", "Limes", "Bergamot", -
+    "Pears", "Cherries", "Plums"
   
   ```
   
@@ -292,6 +296,10 @@ among developers.
 
 ## Tools
 * [rexx-lint](https://github.com/shmuelmetz/rexx-lint)
+
+## License
+This guide is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
 
 ## Sources of Inspiration
 * [The Ruby Style Guide](https://rubystyle.guide/)
