@@ -307,14 +307,18 @@ among developers.
 "use arg" is more idiomatic for ooRexx, NetRexx, and CREXX but is not present in 
 Classic Rexx.
 
-* #### Avoid using "¬". Use "\" instead.
+* #### Avoid using " ¬ ". Use " \ " instead.
 Portability problem when transferring code to an ASCII platform
 
 ## Tools
 * [rexx-lint](https://github.com/shmuelmetz/rexx-lint)
 
-## License
-This guide is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+## How to Contribute
+* This guide is a work in progress. Some guidelines don't have examples to 
+illustrate them, others haven't been fleshed out, and still others have not been 
+considered yet. As such, nothing is set in stone. If you'd like to contribute, 
+feel free to open issues or send pull requests with improvements. See 
+contributing.md for details.
 
 ## Sources of Inspiration
 * [The Ruby Style Guide](https://rubystyle.guide/)
@@ -329,3 +333,6 @@ This guide is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by
 * [Official NetRexx Documentation](https://www.netrexx.org/documentation.nsp)
 * [Official CREXX Documentation](https://crexx.org/#docs)
 * [Rexxetta](https://github.com/RexxLA/rexxetta)
+
+## License
+This guide is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
