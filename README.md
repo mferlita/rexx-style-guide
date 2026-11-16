@@ -7,14 +7,13 @@ community.
 Rexx has always emphasized human-readable code. Communicating with your 
 fellow programmers is just as important as communicating with the computer. 
 After all, code is more often read than it is written. This style guide 
-emphasizes readability for Rexx code to facilitate better collaboration 
+prioritizes readability for Rexx code to facilitate better collaboration 
 among developers.
 
 > "Enhancing readability enhances our ability to solve problems" — V. Anton 
 > Spraul, *Think Like a Programmer*
 
 ## General
-
 ### Naming
 | Element                 | Format     |
 |-------------------------|------------|
@@ -181,8 +180,7 @@ among developers.
 * #### Comment styling
   ```
   /* Good - Inline Comments */
-  
-    /* an inline comment (portable) */
+
     -- an inline comment (ooRexx/NetRexx/CREXX only)
   
   /* Good - Block Comments */
@@ -192,6 +190,9 @@ among developers.
     * for describing things in detail 
     * and grabbing attention
     */
+  
+    /* This is a single line block comment. */
+
   
   /* Bad - Block Comments */
   
@@ -217,6 +218,8 @@ among developers.
 
 * #### Comment generously to explain your intent
 
+* #### Do not nest comments
+
 ### Structure
 * #### Keep routines and methods short. 
   If it exceeds ten lines of code (empty lines excluded), ask "is this doing 
@@ -228,15 +231,14 @@ among developers.
 
 * #### Put directives after the main body of code
 
+* #### Keep variables close to where they are used
+
 ### Control Flow
 * #### Avoid deeply nested if statements and keep them simple.
 <!-- TODO -->
 
-* #### If / Then / Else
-<!-- TODO -->
-
-* #### Select / When / Otherwise
-<!-- TODO -->
+* #### Don't use "signal" as "goto"
+  Signal should only be used for error handling.
 
 ### DO statements
 * #### Keep "do" on the same line as its conditional statement
@@ -253,53 +255,66 @@ among developers.
     end
   ```
 
+* #### Use top-driven loops
+  Prefer "do while" over "do until". 
+
+* #### Use "leave" to leave a loop, not "exit"
+
 ### String Concatenation
 * #### Prefer explicit concatenation over implicit
   ```
   /* Good */
-  name = stdin~lineIn()
+  name = "Fred"
   say "My name is " || name || "."
   
   say 2 || "5"
   say "I like " || "apple pie."
   
   /* Bad */
-  name = stdin~lineIn()
+  name = "Fred"
   say "My name is" name"."
   
   say 2"5"
   say "I like" "apple pie"
   ```
 
+### PARSE
+* #### End a parse with a variable named "." or "trash" to catch leftover input
+
 ### Error Handling
 <!-- TODO -->
+* #### Include error handling for programs longer than (not yet determined)
 
 ### ADDRESS
-<!-- TODO -->
+* #### Uppercase ADDRESS and the environment name being addressed
+* #### Enclose in quotation marks
+* #### Fully spell out the command, don't assume abbreviations
 
 ## Rules Specific to Classic Rexx
-<!-- TODO -->
+* #### Avoid special characters in variable names
 
 ## Rules Specific to ooRexx
 * #### Prefer object methods over legacy functions
-<!-- TODO -->
 
 ## Rules Specific to NetRexx
-<!-- TODO -->
+* #### When using Java classes, import them explicitly
 
 ## Rules Specific to CREXX
 <!-- TODO -->
 
 ## Rules for Portability
-### USE ARG vs. PARSE ARG
-<!-- TODO -->
+* #### Use "use arg" for ooRexx, NetRexx, and CREXX but "parse arg" for Classic Rexx.
+"use arg" is more idiomatic for ooRexx, NetRexx, and CREXX but is not present in 
+Classic Rexx.
+
+* #### Avoid using "¬". Use "\" instead.
+Portability problem when transferring code to an ASCII platform
 
 ## Tools
 * [rexx-lint](https://github.com/shmuelmetz/rexx-lint)
 
 ## License
 This guide is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-
 
 ## Sources of Inspiration
 * [The Ruby Style Guide](https://rubystyle.guide/)
