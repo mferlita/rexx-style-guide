@@ -235,6 +235,7 @@ among developers.
 
 ### Control Flow
 * #### Avoid deeply nested if statements and keep them simple.
+  No more than three levels of nesting.
 <!-- TODO -->
 
 * #### Don't use "signal" as "goto"
