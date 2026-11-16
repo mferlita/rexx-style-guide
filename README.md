@@ -283,10 +283,10 @@ among developers.
 * #### End a parse with a variable named "." or "trash" to catch leftover input
 
 ### Error Handling
-<!-- TODO -->
 * #### Include error handling for programs longer than (not yet determined)
   Use "signal on syntax", "signal on error", and "signal on novalue" and their 
   appropriate labels.
+<!-- TODO -->
 
 ### ADDRESS
 * #### Uppercase ADDRESS and the environment name being addressed
@@ -306,12 +306,13 @@ among developers.
 <!-- TODO -->
 
 ## Rules for Portability
-* #### Use "use arg" for ooRexx, NetRexx, and CREXX but "parse arg" for Classic Rexx.
+* #### Prefer "use arg" for ooRexx, NetRexx, and CREXX but "parse arg" for Classic Rexx.
 "use arg" is more idiomatic for ooRexx, NetRexx, and CREXX but is not present in 
 Classic Rexx.
 
-* #### Avoid using " ¬ ". Use " \ " instead.
-Portability problem when transferring code to an ASCII platform
+* #### Avoid using " ¬ " as NOT. Use " \ " instead.
+Portability problem when transferring code to an ASCII platform.
+" \ " is more universally recognized.
 
 ## Tools
 * [rexx-lint](https://github.com/shmuelmetz/rexx-lint)
