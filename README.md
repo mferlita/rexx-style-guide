@@ -284,6 +284,8 @@ among developers.
 ### Error Handling
 <!-- TODO -->
 * #### Include error handling for programs longer than (not yet determined)
+  Use "signal on syntax", "signal on error", and "signal on novalue" and their 
+  appropriate labels.
 
 ### ADDRESS
 * #### Uppercase ADDRESS and the environment name being addressed
