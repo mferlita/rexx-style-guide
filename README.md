@@ -267,7 +267,7 @@ communicating with the computer.
 
 * #### Align each "end" with the keyword it pairs with
    "else" at the same level as "if", and "end" at the same level as the keyword 
-   it closes (do, if, select)
+   it closes (do, select)
    ```
       /* Yes */
          if num > 1000 then
