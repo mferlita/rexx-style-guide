@@ -364,19 +364,19 @@ communicating with the computer.
 * #### Enclose in quotation marks
 * #### Fully spell out the command, don't assume abbreviations
 
-## Rules Specific to Classic Rexx
+## Guidelines Specific to Classic Rexx
 * #### Avoid special characters in variable names
 
-## Rules Specific to ooRexx
+## Guidelines Specific to ooRexx
 * #### Prefer object methods over legacy functions
 
-## Rules Specific to NetRexx
+## Guidelines Specific to NetRexx
 * #### When using Java classes, import them explicitly
 
-## Rules Specific to CREXX
+## Guidelines Specific to CREXX
 <!-- TODO -->
 
-## Rules for Portability
+## Guidelines for Portability
 * #### Avoid using " ¬ " as NOT. Use " \ " instead.
    Portability problem when transferring code to an ASCII platform.
    " \ " is more universally recognized.
