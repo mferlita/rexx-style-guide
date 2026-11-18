@@ -405,7 +405,6 @@ communicating with the computer.
 ## Guidelines for Portability
 * #### Avoid using " ¬ " as NOT. Use " \ " instead.
    Portability problem when transferring code to an ASCII platform.
-   " \ " is more universally recognized.
 
 ## Tools
 * [rexx-lint](https://github.com/shmuelmetz/rexx-lint)
