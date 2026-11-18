@@ -265,7 +265,7 @@ communicating with the computer.
       end
    ```
 
-* #### Align each "end" with the keyword it pairs with
+* #### Align "else/otherwise" with "if/when" respectively and align each "end" with "do/select"
    "else" and "otherwise" at the same level as "if" and "when" respectively. 
    "end" at the same level as the keyword it closes (do, select).
    ```
