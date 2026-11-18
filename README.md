@@ -15,6 +15,7 @@ communicating with the computer.
 
 ## General
 ### Naming
+
 | Element                 | Format     |
 |-------------------------|------------|
 | Keyword Instructions    | lowercase  |
@@ -24,6 +25,7 @@ communicating with the computer.
 | Variables               | camelCase  |
 | Classes                 | PascalCase |
 | Boolean                 | lowercase  |
+
 * #### Use the case convention above in a file and do not mix cases.
 
 * #### Use English for identifiers
