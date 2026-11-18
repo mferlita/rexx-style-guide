@@ -253,7 +253,7 @@ communicating with the computer.
 
    ```
 
-* #### Prefer \= over <>, ><, and ¬= for clarity
+* #### Prefer \= (not equal) over <>, ><, and ¬= for clarity
    ```
       /* Yes */
          if x \= 12 then
