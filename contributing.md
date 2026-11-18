@@ -1,7 +1,7 @@
 # Contributing
 
-## Propose a rule
-1. Open an issue with the label "rule-proposal"
+## Propose a new rule or change to an existing rule
+1. Open an issue with the rule-proposal or rule-change label
 2. Include the rule, a good/bad example, and the rationale
 
 ## Submit a change

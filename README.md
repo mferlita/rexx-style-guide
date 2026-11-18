@@ -4,11 +4,11 @@ Style guide for Rexx, ooRexx, NetRexx, and CREXX
 This style guide is maintained by Matt Ferlita with input from the RexxLA 
 community.
 
-Rexx has always emphasized human-readable code. Communicating with your 
-fellow programmers is just as important as communicating with the computer. 
-After all, code is more often read than it is written. This style guide 
-prioritizes readability for Rexx code to facilitate better collaboration 
-among developers.
+This guide does not in any way prescribe a singular "correct" way to write 
+Rexx. Rather, it gives suggestions on best practices to create readable and 
+consistent code to facilitate better collaboration among developers. After all, 
+communicating with your fellow programmers is just as important as 
+communicating with the computer. 
 
 > "Enhancing readability enhances our ability to solve problems" — V. Anton 
 > Spraul, *Think Like a Programmer*
@@ -27,192 +27,199 @@ among developers.
 * #### Use the case convention above in a file and do not mix cases.
 
 * #### Use English for identifiers
-  ```
-  /* Good - Identifier is in English */
-    salary = 1000
-  
-  /* Bad - Identifier is in Greek */
-    μισθός = 1000
-  
-  /* Bad - Identifier is in Greek but spelled with Latin letters */
-    misthos = 1000
-  ```
+   ```
+   /* Yes - Identifier is in English */
+      salary = 1000
+   
+   /* No - Identifier is in Greek */
+      μισθός = 1000
+   
+   /* No - Identifier is in Greek but spelled with Latin letters */
+      misthos = 1000
+   ```
 
 * #### Use meaningful names for variables, routines, classes, and methods.
-  ```
-  /* Good - descriptive, relevant */
-    price = 1 + 2
-    total = price * 3
-    ::method calculateTotal
-  
-  /* Bad - generic, unclear */
-    values = 1 + 2
-    computed = values * 3
-    ::method calc
-  ```
+   ```
+   /* Yes - descriptive, relevant */
+      price = 1 + 2
+      total = price * 3
+      ::method calculateTotal
+   
+   /* No - generic, unclear */
+      values = 1 + 2
+      computed = values * 3
+      ::method calc
+   ```
 
 * #### Avoid single character names.
-  ```
-  /* Good */
-    do count = 1 to max
-  
-  /* Bad */
-    do c = 1 to m
-  ```
+   ```
+   /* Yes */
+      do count = 1 to max
+   
+   /* No */
+      do c = 1 to m
+   ```
 
 * #### Avoid unnecessary abbreviation
-  ```
-  /* Good */
-    lineCount = 2
-  
-  /* Bad */
-    lineCnt = 2
-  ```
+   ```
+   /* Yes */
+      lineCount = 2
+   
+   /* No */
+      lineCnt = 2
+   ```
   
 * #### Avoid keyword names as variables
 
 ### Layout and Whitespace
-* #### Prefer two spaces for indentation.
-  ```
-  /* Good - 2 spaces */ 
-    do forever
+* #### Prefer three spaces for indentation.
+   ```
+   /* Yes - 3 spaces */ 
+      do forever
+         say "SPAM"
+      end
+   
+   /* No - no indentation */
+      do forever
       say "SPAM"
-    end
-  
-  /* Bad - no indentation */
-    do forever
-    say "SPAM"
-    end
-  
-  /* Bad - 4 spaces */
-    do forever
-        say "SPAM"
-    end
-  ```
+      end
+   
+   /* No - 5 spaces */
+      do forever
+           say "SPAM"
+      end
+   ```
 
 * #### Prefer 80 character line length.
 
 * #### No trailing whitespace
 
 * #### Leave whitespace around operators
-  Use spaces around operators, after commas, colons, and semicolons.
-  ```
-  /* Good */
-    say 98 + (59872 % (13 * 8)) * 52
-    x = 1, 2, 3
-    min = 2; max = 4
+   Use spaces around operators, after commas, colons, and semicolons.
+   ```
+   /* Yes */
+      say 98 + (59872 % (13 * 8)) * 52
+      x = 1, 2, 3
+      min = 2; max = 4
+   
+   /* No */
+      say 98+(59872%(13*8))*52
+      x=1,2,3
+      min=2;max=4
+   ```
   
-  /* Bad */
-    say 98+(59872%(13*8))*52
-    x=1,2,3
-    min=2;max=4
-  ```
-  
-  *Exceptions:* Exponentiation, negative integers, and method send operator 
-  (twiddle)  
-  ```
-  /* Good */
-    say -52 * 5**2
-    say "!elloH"~reverse
-  
-  /* Bad */
-    say - 52 * 5 ** 2
-    say "!elloH" ~ reverse
-  ```
+   *Exceptions:* Exponentiation, negative integers, and method send operator 
+   (twiddle)  
+   ```
+   /* Yes */
+      say -52 * 5**2
+      say "!elloH"~reverse
+   
+   /* No */
+      say - 52 * 5 ** 2
+      say "!elloH" ~ reverse
+   ```
 
 * #### Align the elements of arrays spanning multiple lines
-  ```
-  /* Good */
-    someArray = "Apples", "Oranges", "Persimmons", -
-                "Lemons", "Limes", "Bergamot", -
-                "Pears", "Cherries", "Plums"
-    
-  /* Bad */
-    someArray = "Apples", "Oranges", "Persimmons", -
-    "Lemons", "Limes", "Bergamot", -
-    "Pears", "Cherries", "Plums"
-  
-  ```
+   ```
+   /* Yes */
+      someArray = "Apples", "Oranges", "Persimmons", -
+                  "Lemons", "Limes", "Bergamot", -
+                  "Pears", "Cherries", "Plums"
+     
+   /* No */
+      someArray = "Apples", "Oranges", "Persimmons", -
+      "Lemons", "Limes", "Bergamot", -
+      "Pears", "Cherries", "Plums"
+   ```
   
 * #### One statement per line.
-  ```
-  /* Good */
-    say "Hi"
-    say "Bye"
-  
-    if someVar > 0 then 
-      say "positive"
-  
-    if lineCount > 1000 then
-      say "Warning: large file"
-
+  *Note:* "if...then" and "else if...then" count as one statement
+   ```
+   /* Yes */
+      say "Hi"
+      say "Bye"
+      
+      if someVar > 0 then 
+         say "positive"
+      
+      if lineCount > 1000 then
+         do
+            say "Warning: large file"
+         end
     
-  /* Bad */
-    say "Hi"; say "Bye"
-    
-    if someVar > 0 then say "positive"
+   /* No */
+      say "Hi"; say "Bye"
+      
+      if someVar > 0 then say "positive"
+      
+      if lineCount > 1000 then do
+         say "Warning: large file"
+      end
   
-    if lineCount > 1000 then say "Warning: large file"
-  ```
+      if lineCount > 1000
+         then do
+              say "Warning: large file"
+              end
+   ```
   
 * #### Separate logical sections with one blank line.
-  ```
-  /* Good */
-    price = 1 + 2
-    total = price * 3
-    
-    taxRate = 0.08
-    tax = total * taxRate
-    
-    say "Total: " || total
-    say "Tax: " || tax
-  
-  /* Bad */
-    price = 1 + 2
-    total = price * 3
-    taxRate = 0.08
-    tax = total * taxRate
-    say "Total:" total
-    say "Tax:" tax
-  ```
+   ```
+   /* Yes */
+      price = 1 + 2
+      total = price * 3
+      
+      taxRate = 0.08
+      tax = total * taxRate
+      
+      say "Total: " || total
+      say "Tax: " || tax
+   
+   /* No */
+      price = 1 + 2
+      total = price * 3
+      taxRate = 0.08
+      tax = total * taxRate
+      say "Total:" total
+      say "Tax:" tax
+   ```
 
 ### Comments
 * #### Comment styling
-  ```
-  /* Good - Inline Comments */
-
-    -- an inline comment (ooRexx/NetRexx/CREXX only)
-  
-  /* Good - Block Comments */
-  
-    /* 
-    * This is a block style comment
-    * for describing things in detail 
-    * and grabbing attention
-    */
-  
-    /* This is a single line block comment. */
-
-  
-  /* Bad - Block Comments */
-  
-    /************************************************/
-    /* To the interpreter, these lines are all      */
-    /* separate comments and could consume extra    */
-    /* cycles, affecting performance. They eat      */
-    /* up file space unnecessarily which could also */
-    /* affect performance. Lastly, they are harder  */
-    /* to write and thus harder to maintain.        */
-    /************************************************/
-  
-    /***************************************
-    * This is also bad. While the block is *
-    * considered one comment now, it is    *
-    * still just as hard to maintain       *
-    * because of all the extra symbols.    *
-    ***************************************/
-  
-  ```
+   ```
+   /* Yes - Inline Comments */
+   
+      -- an inline comment (ooRexx/NetRexx/CREXX only)
+   
+   /* Yes - Block Comments */
+   
+      /* 
+      * This is a block style comment
+      * for describing things in detail 
+      * and grabbing attention
+      */
+      
+      /* This is a single line block comment. */
+   
+   
+   /* No - Block Comments */
+   
+      /************************************************/
+      /* To the interpreter, these lines are all      */
+      /* separate comments and could consume extra    */
+      /* cycles, affecting performance. They eat      */
+      /* up file space unnecessarily which could also */
+      /* affect performance. Lastly, they are harder  */
+      /* to write and thus harder to maintain.        */
+      /************************************************/
+      
+      /****************************************
+      * This is also a no. While the block is *
+      * considered one comment now, it is     *
+      * still just as hard to maintain        *
+      * because of all the extra symbols.     *
+      ****************************************/
+   ```
 
 * #### Use clear program headers
 
@@ -221,72 +228,138 @@ among developers.
 * #### Do not nest comments
 
 ### Structure
-* #### Keep routines and methods short. 
-  If it exceeds ten lines of code (empty lines excluded), ask "is this doing 
-  more than one thing?"
+* #### Routines and methods should do only one thing 
+  
+* #### If you call code only once, don't make it a routine or a method
 
-* #### If you call code only once, don't make it a routine or a method.
-
-* #### Use comment lines to separate ::routine and ::class blocks.
+* #### Use comment lines to separate ::routine and ::class blocks
 
 * #### Put directives after the main body of code
 
 * #### Keep variables close to where they are used
 
 ### Control Flow
-* #### Avoid deeply nested if statements and keep them simple.
-  No more than three levels of nesting.
-<!-- TODO -->
+* #### No more than three levels of nesting.
 
 * #### Don't use "signal" as "goto"
-  Signal should only be used for error handling.
+   Signal should only be used for error handling.
 
-### DO statements
-* #### Keep "do" on the same line as its conditional statement
-  ```
-  /* Good */
-    do while num > 1
-      ...some code
-    end
-    
-  /* Bad */
-    do
-      while num > 1
-      ...some code
-    end
-  ```
-
+### DO/LOOP statements
 * #### Use top-driven loops
-  Prefer "do while" over "do until". 
+   Prefer "do while" over "do until". 
 
 * #### Use "leave" to leave a loop, not "exit"
 
+### Block Formatting
+* #### Keep "do" and "loop" on the same line as its condition
+   ```
+   /* Yes */
+      do while num > 1
+         ...stuff to do
+      end
+     
+   /* No */
+      do
+         while num > 1
+            ...stuff to do
+      end
+   ```
+
+* #### Align each "end" with the keyword it pairs with
+   "else" at the same level as "if", and "end" at the same level as the keyword 
+   it closes (do, if, select)
+   ```
+      /* Yes */
+         if num > 1000 then
+            say "big"
+         else if num < 1000 then
+            say "small"
+         else
+            do
+               say "One thousand"
+               ...some other stuff to do
+            end
+  
+         select
+            when num > 1000 then
+               say "big"
+            when num < 1000 then
+               say "small"
+            otherwise
+               do
+                  say "One thousand"
+                  ...some other stuff to do
+               end
+         end
+
+         do while x > 100
+            if y > 5 then 
+               do
+                  say "big"
+                  x = x + 1
+               end
+         end
+  
+      /* No */
+  
+         if num > 1000 then
+            say "big"
+            else if num < 1000 then
+            say "small"
+            else
+               do
+                  say "One thousand"
+                  ...some other stuff to do
+                  end
+  
+         select
+            when num > 1000 then
+               say "big"
+            when num < 1000 then
+               say "small"
+            otherwise
+               do
+                  say "One thousand"
+                  ...some other stuff to do
+                  end
+            end
+  
+         do while x > 100
+            if y > 5 then 
+               do
+                  say "big"
+                  x = x + 1
+                  end
+            end
+         
+   ```
+
 ### String Concatenation
 * #### Prefer explicit concatenation over implicit
-  ```
-  /* Good */
-  name = "Fred"
-  say "My name is " || name || "."
-  
-  say 2 || "5"
-  say "I like " || "apple pie."
-  
-  /* Bad */
-  name = "Fred"
-  say "My name is" name"."
-  
-  say 2"5"
-  say "I like" "apple pie"
-  ```
+   ```
+   /* Yes */
+      name = "Fred"
+      say "My name is " || name || "."
+      
+      say 2 || "5"
+      say "I like " || "apple pie."
+   
+   /* No */
+      name = "Fred"
+      say "My name is" name"."
+      
+      say 2"5"
+      say "I like" "apple pie"
+   ```
 
 ### PARSE
 * #### End a parse with a variable named "." or "trash" to catch leftover input
 
 ### Error Handling
-* #### Include error handling for programs longer than (not yet determined)
-  Use "signal on syntax", "signal on error", and "signal on novalue" and their 
-  appropriate labels.
-<!-- TODO -->
+* #### Include error handling for programs with a cyclomatic complexity greater than ten
+   Use "signal on syntax", "signal on error", and "signal on novalue" and their 
+   appropriate labels.  
+   Use error handling only as needed for simpler programs.
 
 ### ADDRESS
 * #### Uppercase ADDRESS and the environment name being addressed
@@ -306,19 +379,15 @@ among developers.
 <!-- TODO -->
 
 ## Rules for Portability
-* #### Prefer "use arg" for ooRexx, NetRexx, and CREXX but "parse arg" for Classic Rexx.
-"use arg" is more idiomatic for ooRexx, NetRexx, and CREXX but is not present in 
-Classic Rexx.
-
 * #### Avoid using " ¬ " as NOT. Use " \ " instead.
-Portability problem when transferring code to an ASCII platform.
-" \ " is more universally recognized.
+   Portability problem when transferring code to an ASCII platform.
+   " \ " is more universally recognized.
 
 ## Tools
 * [rexx-lint](https://github.com/shmuelmetz/rexx-lint)
 
 ## How to Contribute
-* This guide is a work in progress. Some guidelines don't have examples to 
+This guide is a work in progress. Some guidelines don't have examples to 
 illustrate them, others haven't been fleshed out, and still others have not been 
 considered yet. As such, nothing is set in stone. If you'd like to contribute, 
 feel free to open issues or send pull requests with improvements. See 
