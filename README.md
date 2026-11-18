@@ -266,8 +266,6 @@ communicating with the computer.
    ```
 
 * #### Align "else/otherwise" with "if/when" respectively and align each "end" with "do/select"
-   "else" and "otherwise" at the same level as "if" and "when" respectively. 
-   "end" at the same level as the keyword it closes (do, select).
    ```
       /* Yes */
          if num > 1000 then
