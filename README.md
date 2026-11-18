@@ -2,7 +2,7 @@
 Style guide for Rexx, ooRexx, NetRexx, and CREXX
 
 This style guide is maintained by Matt Ferlita with input from the RexxLA 
-community.
+community. It is viewable and printable at https://mferlita.github.io/rexx-style-guide/
 
 This guide does not in any way prescribe a singular "correct" way to write 
 Rexx. Rather, it gives suggestions on best practices to create readable and 
