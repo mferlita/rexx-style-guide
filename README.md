@@ -110,18 +110,20 @@ communicating with the computer.
       min=2;max=4
    ```
   
-   *Exceptions:* Exponentiation, negative integers, and method send operator 
-   (twiddle)  
+   *Exceptions:* Exponentiation, negative integers, method send operator 
+   (twiddle), and extended assignments  
    ```
    /* Yes */
       say -52 * 5**2
       say "!elloH"~reverse
+      sum += 1
    
    /* No */
       say - 52 * 5 ** 2
       say "!elloH" ~ reverse
+      sum + = sum
    ```
-
+  
 * #### Align the elements of arrays spanning multiple lines
    ```
    /* Yes */
@@ -239,6 +241,28 @@ communicating with the computer.
 * #### Put directives after the main body of code
 
 * #### Keep variables close to where they are used
+
+### Operators and Assignments
+* #### Prefer shorthand for extended assignments
+   ```
+      /* Yes */
+         sum += 1
+
+      /* No */
+         sum = sum + 1
+
+   ```
+
+* #### Prefer \= over <>, ><, and ¬= for clarity
+   ```
+      /* Yes */
+         if x \= 12 then
+  
+      /* No */
+         if x <> 12 then
+         if x >< 12 then
+         if x ¬= 12 then
+   ```
 
 ### Control Flow
 * #### No more than three levels of nesting.
