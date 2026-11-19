@@ -226,6 +226,15 @@ communicating with the computer.
    ```
 
 * #### Use clear program headers
+   I suggest the following format to use at the beginning of every program:
+   ```
+      /*
+       * Purpose: description
+       * How to use: description
+       * Author: name, date
+       * Changed/edited: name(s), date(s)
+       */
+   ```
 
 * #### Comment generously to explain your intent
 
