@@ -230,9 +230,8 @@ communicating with the computer.
    ```
       /*
        * Purpose: description
-       * How to use: description
-       * Author: name, date
-       * Changed/edited: name(s), date(s)
+       * Author: name, date (yyyy-mm-dd)
+       * Changed/edited: name(s), date(s) (yyyy-mm-dd)
        */
    ```
 
@@ -242,6 +241,17 @@ communicating with the computer.
 
 ### Structure
 * #### Put directives, classes, methods, and routines after the main body of code and separate it with a single-line block comment
+   ```
+      The main body of code
+      The main body of code
+      The main body of code
+  
+      /* Directives */
+  
+      ::class someClass
+      
+      ::method someMethod
+   ```
 
 * #### Routines and methods should do only one thing 
   
