@@ -61,7 +61,7 @@ communicating with the computer.
    /* No */
       do c = 1 to m
    ```
-   *Exceptions:* Actual mathematical notation, loop counters, array indices
+   *Exceptions:* Actual mathematical notation, counters for short loops
 
 * #### Avoid unnecessary abbreviation
    ```
