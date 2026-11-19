@@ -232,7 +232,7 @@ communicating with the computer.
 * #### Do not nest comments
 
 ### Structure
-* #### Put directives after the main body of code and separate it with a single-line block comment
+* #### Put directives, classes, and routines after the main body of code and separate it with a single-line block comment
 
 * #### Routines and methods should do only one thing 
   
