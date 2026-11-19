@@ -61,6 +61,7 @@ communicating with the computer.
    /* No */
       do c = 1 to m
    ```
+   *Exceptions:* Actual mathematical notation, loop counters, array indices
 
 * #### Avoid unnecessary abbreviation
    ```
@@ -240,7 +241,7 @@ communicating with the computer.
 * #### Do not nest comments
 
 ### Structure
-* #### Put directives, classes, methods, and routines after the main body of code and separate it with a single-line block comment
+* #### Put directives after the main body of code and separate it with a single-line block comment
    ```
       The main body of code
       The main body of code
