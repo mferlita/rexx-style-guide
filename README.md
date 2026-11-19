@@ -232,13 +232,13 @@ communicating with the computer.
 * #### Do not nest comments
 
 ### Structure
+* #### Put directives after the main body of code and separate it with a single-line block comment
+
 * #### Routines and methods should do only one thing 
   
 * #### If you call code only once, don't make it a routine or a method
 
 * #### Use comment lines to separate ::routine and ::class blocks
-
-* #### Put directives after the main body of code
 
 * #### Keep variables close to where they are used
 
