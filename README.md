@@ -241,13 +241,18 @@ communicating with the computer.
 * #### Do not nest comments
 
 ### Structure
+* #### Keep variables close to where they are used
+
 * #### Routines and methods should do only one thing 
   
 * #### If you call code only once, don't make it a routine or a method
 
-* #### Use comment lines to separate routine and class blocks
+* #### Use comment lines to separate class blocks
+   Use inline comment lines ( -- ), spanning the full line length, to separate 
+   class blocks from other directives/keyword instructions and other class 
+   blocks.
 
-* #### Keep variables close to where they are used
+* #### When ordering directives/keyword instructions, put declarations before behavior
 
 ### Operators and Assignments
 * #### Prefer shorthand for extended assignments if available
@@ -403,23 +408,12 @@ communicating with the computer.
 ## Guidelines Specific to ooRexx
 * #### Prefer object methods over legacy functions
 
-* #### Put directives after the main body of code and separate it with a single-line block comment
-   ```
-      The main body of code
-      The main body of code
-      The main body of code
-  
-      /* Directives */
-  
-      ::class someClass
-      
-      ::method someMethod
-   ```
-  
+* #### Separate directives from main code body with comment lines spanning the line length
+
 ## Guidelines Specific to NetRexx
 * #### When using Java classes, import them explicitly
 
-* #### Placement of top-level statements and classes/methods should mirror Java (top of file, before main body of code)
+* #### Placement of keyword instructions should mirror Java convention (top of file, before main body of code)
 
 ## Guidelines Specific to CREXX
 <!-- TODO -->
