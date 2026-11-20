@@ -61,7 +61,7 @@ communicating with the computer.
    /* No */
       do c = 1 to m
    ```
-   *Exceptions:* Actual mathematical notation, counters for short loops
+   *Exceptions:* Actual mathematical notation
 
 * #### Avoid unnecessary abbreviation
    ```
