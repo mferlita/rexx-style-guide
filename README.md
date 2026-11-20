@@ -408,7 +408,16 @@ communicating with the computer.
 ## Guidelines Specific to ooRexx
 * #### Prefer object methods over legacy functions
 
-* #### Separate directives from main code body with comment lines spanning the line length
+* #### Separate directives from main code body with a single line labeled block comment
+   ```
+      main body of code
+      ...code
+      ...code
+  
+      /* Directives */
+  
+      ::class SomeClass
+   ```
 
 ## Guidelines Specific to NetRexx
 * #### When using Java classes, import them explicitly
