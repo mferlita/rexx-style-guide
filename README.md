@@ -21,9 +21,9 @@ communicating with the computer.
 | Keyword Instructions    | lowercase  |
 | Built-in Functions      | UPPERCASE  |
 | Directives              | lowercase  |
-| Methods and Routines    | camelCase  |
+| Methods                 | camelCase  |
 | Variables               | camelCase  |
-| Classes                 | PascalCase |
+| Classes and Routines    | PascalCase |
 | Boolean                 | lowercase  |
 
 * #### Use the case convention above in a file and do not mix cases.
@@ -241,29 +241,16 @@ communicating with the computer.
 * #### Do not nest comments
 
 ### Structure
-* #### Put directives after the main body of code and separate it with a single-line block comment
-   ```
-      The main body of code
-      The main body of code
-      The main body of code
-  
-      /* Directives */
-  
-      ::class someClass
-      
-      ::method someMethod
-   ```
-
 * #### Routines and methods should do only one thing 
   
 * #### If you call code only once, don't make it a routine or a method
 
-* #### Use comment lines to separate ::routine and ::class blocks
+* #### Use comment lines to separate routine and class blocks
 
 * #### Keep variables close to where they are used
 
 ### Operators and Assignments
-* #### Prefer shorthand for extended assignments
+* #### Prefer shorthand for extended assignments if available
    ```
       /* Yes */
          sum += 1
@@ -416,8 +403,23 @@ communicating with the computer.
 ## Guidelines Specific to ooRexx
 * #### Prefer object methods over legacy functions
 
+* #### Put directives after the main body of code and separate it with a single-line block comment
+   ```
+      The main body of code
+      The main body of code
+      The main body of code
+  
+      /* Directives */
+  
+      ::class someClass
+      
+      ::method someMethod
+   ```
+  
 ## Guidelines Specific to NetRexx
 * #### When using Java classes, import them explicitly
+
+* #### Placement of top-level statements and classes/methods should mirror Java (top of file, before main body of code)
 
 ## Guidelines Specific to CREXX
 <!-- TODO -->
