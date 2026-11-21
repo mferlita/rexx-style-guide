@@ -391,6 +391,12 @@ communicating with the computer.
 ### PARSE
 * #### End a parse with a variable named "." or "trash" to catch leftover input
 
+### Error Handling
+* #### Include error handling for programs with a cyclomatic complexity greater than ten
+   Use "signal on syntax", "signal on error", and "signal on novalue" and their 
+   appropriate labels.  
+   Use error handling only as needed for simpler programs.
+
 ### ADDRESS
 * #### Uppercase ADDRESS and the environment name being addressed
 * #### Enclose in quotation marks
